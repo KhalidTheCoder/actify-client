@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router";
 import logoImg from "../assets/actify.jpg";
 import { AuthContext } from "../context/AuthContext";
+import { RiMenu4Line } from "react-icons/ri";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="bg-[#493628] shadow-sm">
@@ -15,7 +17,7 @@ const Navbar = () => {
             <h1 className="text-3xl font-bold text-[#E4E0E1]">Actify</h1>
           </div>
         </div>
-        <div className="navbar-center flex gap-3">
+        <div className="navbar-center hidden md:flex flex gap-3">
           {/* <Link className="text-lg font-semibold text-[#E4E0E1]">Upcoming Events </Link> */}
           <NavLink to="/" className="relative group transition duration-300">
             <span className="text-[#E4E0E1] group-hover:text-white font-semibold">
@@ -34,7 +36,7 @@ const Navbar = () => {
           </NavLink>
         </div>
 
-        <div className="navbar-end">
+        <div className="navbar-end flex items-center gap-1.5">
           {user ? (
             <div className="flex-none">
               <div className="dropdown dropdown-end">
@@ -75,7 +77,7 @@ const Navbar = () => {
               </div>
             </div>
           ) : (
-            <div className="mr-2 flex gap-2 justify-center items-center">
+            <div className="flex gap-2 justify-center items-center">
               <Link to="/login">
                 <button className="text-sm text-[#E4E0E1] cursor-pointer font-semibold hover:scale-105 transform hover:text-white transition duration-300">
                   Login
@@ -89,8 +91,31 @@ const Navbar = () => {
               </Link>
             </div>
           )}
+
+          <div className="md:hidden">
+            <button onClick={() => setMenuOpen(!menuOpen)}>
+              <RiMenu4Line className="text-3xl text-[#E4E0E1]" />
+            </button>
+          </div>
         </div>
       </div>
+
+      {menuOpen && (
+        <div className="md:hidden bg-[#493628] px-4 pb-4">
+          <NavLink
+            to="/"
+            className="block py-2 text-[#E4E0E1] font-semibold hover:text-white"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/upcoming-events"
+            className="block py-2 text-[#E4E0E1] font-semibold hover:text-white"
+          >
+            Upcoming Events
+          </NavLink>
+        </div>
+      )}
     </div>
   );
 };

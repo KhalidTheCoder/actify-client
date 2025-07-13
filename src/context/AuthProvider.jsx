@@ -9,6 +9,7 @@ import {
   signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
+import toast from "react-hot-toast";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -31,9 +32,14 @@ const AuthProvider = ({ children }) => {
     return signInWithPopup(auth, googleProvider);
   };
 
-  const logOut = () => {
+  const logOut = async () => {
     setLoading(true);
-    return signOut(auth);
+    try {
+      await signOut(auth);
+      toast.success("Signed Out Successfully");
+    } catch (error) {
+      toast.error("Sign out failed: " + error.message);
+    }
   };
 
   useEffect(() => {
