@@ -94,7 +94,7 @@ const Register = () => {
         style={{ minHeight: "calc(100vh - 250px)" }}
         className="min-h-screen flex items-center justify-center bg-[#E4E0E1] p-4"
       >
-        <div className="flex flex-col-reverse md:flex-row justify-center gap-2 items-center">
+        <div className="flex flex-col-reverse md:flex-row justify-center gap-8 items-center w-full max-w-6xl">
           <div className="w-full max-w-md p-6 rounded-lg shadow-md bg-[#FCF7F8] text-[#493628]">
             <h2 className="mb-3 text-3xl font-semibold text-center text-[#493628]">
               Register your account
@@ -147,7 +147,7 @@ const Register = () => {
                   Photo URL
                 </label>
                 <input
-                  type="text"
+                  type="URL"
                   id="photo"
                   name="photo"
                   placeholder="Your Photo URL"
