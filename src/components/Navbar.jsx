@@ -60,7 +60,7 @@ const Navbar = () => {
                   className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
                 >
                   <li className="text-lg font-bold">
-                    <Link className="justify-between">Create Event</Link>
+                    <Link to="/create-event" className="justify-between">Create Event</Link>
                   </li>
                   <li className="text-lg font-bold">
                     <Link>Manage Events</Link>
