@@ -6,6 +6,7 @@ import App from "../App";
 import UpcomingEvents from "../pages/UpcomingEvents";
 import PrivateRoute from "./PrivateRoute";
 import CreateEvent from "../pages/CreateEvent";
+import EventDetails from "../pages/EventDetails";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +35,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <CreateEvent></CreateEvent>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/event/:id",
+        element: (
+          <PrivateRoute>
+            <EventDetails></EventDetails>
           </PrivateRoute>
         ),
       },

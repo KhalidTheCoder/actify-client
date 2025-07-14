@@ -33,7 +33,7 @@ const CreateEvent = () => {
 
     if (eventDate) {
       data.date = format(eventDate, "yyyy-MM-dd");
-      data.email = user?.email
+      data.email = user?.email;
     } else {
       return toast.error("Please select an event date.");
     }
@@ -72,6 +72,7 @@ const CreateEvent = () => {
             className="input"
             name="title"
             placeholder="Event Title"
+            required
           />
 
           <label className="label">Description</label>
@@ -79,6 +80,7 @@ const CreateEvent = () => {
             className="textarea"
             name="description"
             placeholder="Description"
+            required
           ></textarea>
 
           <label className="label">Event Type</label>
@@ -86,6 +88,7 @@ const CreateEvent = () => {
             defaultValue="Pick a color"
             name="event-type"
             className="select"
+            required
           >
             <option disabled={true}>Select Event Type</option>
             <option>Cleanup</option>
@@ -99,6 +102,7 @@ const CreateEvent = () => {
             className="input"
             name="image"
             placeholder="Image URL"
+            required
           />
 
           <label className="label">Location</label>
@@ -107,9 +111,8 @@ const CreateEvent = () => {
             className="input"
             name="location"
             placeholder="Location"
+            required
           />
-
-          <label className="label">date</label>
 
           <label className="label">Event Date</label>
           <DatePicker
