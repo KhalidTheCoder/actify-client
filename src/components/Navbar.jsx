@@ -18,7 +18,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar-center hidden md:flex flex gap-3">
-          {/* <Link className="text-lg font-semibold text-[#E4E0E1]">Upcoming Events </Link> */}
+         
           <NavLink to="/" className="relative group transition duration-300">
             <span className="text-[#E4E0E1] group-hover:text-white font-semibold">
               Home
@@ -65,7 +65,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li className="text-lg font-bold">
-                    <Link>Manage Events</Link>
+                    <Link to="/manage-events">Manage Events</Link>
                   </li>
                   <li className="text-lg font-bold">
                     <Link to="/joined-events">Joined Events</Link>
