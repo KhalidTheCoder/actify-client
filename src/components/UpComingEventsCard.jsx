@@ -23,7 +23,7 @@ const UpComingEventsCard = ({ event }) => {
       <p className="text-sm font-medium text-[#AB886D] italic">{eventType}</p>
       <p className="text-sm font-medium text-[#493628] mt-1">📅 {date}</p>
 
-      <Link to={`/event/${_id}`}>
+      <Link to={`/event/${event.eventId || event._id}`}>
         <button className="mt-4 w-full py-2 rounded bg-[#AB886D] text-white hover:bg-[#493628] transition duration-300">View Event</button>
       </Link>
      </div>
