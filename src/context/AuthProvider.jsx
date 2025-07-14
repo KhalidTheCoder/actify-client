@@ -10,6 +10,7 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebase/firebase.init";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -43,13 +44,26 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (loggedInUser) => {
-      setUser(loggedInUser);
-      setLoading(false);
-    });
+  const unsubscribe = onAuthStateChanged(auth, (loggedInUser) => {
+    setUser(loggedInUser);
 
-    return () => unsubscribe();
-  }, []);
+    if (loggedInUser) {
+      
+      axios.get("http://localhost:3000", {
+        headers: {
+          Authorization: `Bearer ${loggedInUser.accessToken}`,
+        },
+      })
+      .catch((err) => {
+        console.error("Token verification failed:", err);
+      });
+    }
+
+    setLoading(false); 
+  });
+
+  return () => unsubscribe();
+}, []);
 
   const userInfo = {
     user,
