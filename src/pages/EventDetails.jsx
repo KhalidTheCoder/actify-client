@@ -91,7 +91,7 @@ const EventDetails = () => {
                   "event-type": event["event-type"],
                 })
               }
-              className="px-6 py-2 rounded bg-[#AB886D] text-white hover:bg-[#493628] transition"
+              className="px-6 py-2 rounded bg-[#AB886D] font-medium text-white hover:bg-[#493628] transition"
             >
               Join Event
             </button>
