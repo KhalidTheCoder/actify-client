@@ -63,7 +63,7 @@ const EventDetails = () => {
             className="max-w-sm rounded-xl shadow-2xl object-cover w-full lg:w-[400px] h-auto"
           />
 
-          {/* Left Side: Text Content */}
+         
           <div className="text-[#493628] max-w-lg">
             <h1 className="text-3xl lg:text-4xl font-bold mb-4">
               {event.title}
@@ -85,6 +85,10 @@ const EventDetails = () => {
                   title: event.title,
                   userEmail: user.email,
                   joinedAt: new Date().toISOString(),
+                  image: event.image,
+                  location: event.location,
+                  date: event.date,
+                  "event-type": event["event-type"],
                 })
               }
               className="px-6 py-2 rounded bg-[#AB886D] text-white hover:bg-[#493628] transition"
