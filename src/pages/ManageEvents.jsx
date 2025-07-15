@@ -47,7 +47,7 @@ const ManageEvents = () => {
       body: JSON.stringify(updatedEvent),
     })
       .then((res) => res.json())
-      .then((data) => {
+      .then(() => {
         const updatedList = manageEvents.map((e) =>
           e._id === selectedEvent._id ? { ...e, ...updatedEvent } : e
         );
@@ -60,9 +60,9 @@ const ManageEvents = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className="min-h-screen bg-[#E4E0E1] py-12 px-4">
+    <div className="min-h-screen py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-10 text-[#493628]">
+        <h1 className="text-4xl font-bold text-center mb-10">
           Manage Events
         </h1>
 

@@ -8,6 +8,9 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
+import formlottie from "../assets/lottie/form.json";
+import bg from "../assets/bg.jpg";
+import Lottie from "lottie-react";
 
 const CustomInput = forwardRef(({ value, onClick }, ref) => (
   <button
@@ -25,7 +28,6 @@ const CreateEvent = () => {
   const [eventDate, setEventDate] = useState(null);
   const { user } = useContext(AuthContext);
   const token = user?.accessToken;
-  
 
   const handleAddEvent = (e) => {
     e.preventDefault();
@@ -44,7 +46,6 @@ const CreateEvent = () => {
       return toast.error("Title must be at least 3 characters long.");
     }
 
-    
     axios
       .post("http://localhost:3000/events", data, {
         headers: {
@@ -69,76 +70,88 @@ const CreateEvent = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto">
-      <h1>Create Event</h1>
+    <div className="max-w-7xl mx-auto px-4 py-10">
+      <div className="flex justify-center items-center">
+        <h1 className="text-4xl font-bold text-center mb-10">Create Event</h1>
+      </div>
 
-      <form onSubmit={handleAddEvent}>
-        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs max-w-6xl border p-4">
-          <legend className="fieldset-legend">Event Details</legend>
+      <div className="flex flex-col md:flex-row justify-center items-center gap-8 w-full max-w-6xl">
+        <div>
+          <Lottie
+            style={{ width: "400px" }}
+            animationData={formlottie}
+            loop={true}
+          ></Lottie>
+        </div>
 
-          <label className="label">Title</label>
-          <input
-            type="text"
-            className="input"
-            name="title"
-            placeholder="Event Title"
-            required
-          />
+        <form onSubmit={handleAddEvent}>
+          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs max-w-6xl border p-4">
+            <legend className="fieldset-legend">Event Details</legend>
 
-          <label className="label">Description</label>
-          <textarea
-            className="textarea"
-            name="description"
-            placeholder="Description"
-            required
-          ></textarea>
+            <label className="label">Title</label>
+            <input
+              type="text"
+              className="input"
+              name="title"
+              placeholder="Event Title"
+              required
+            />
 
-          <label className="label">Event Type</label>
-          <select
-            defaultValue="Pick a color"
-            name="event-type"
-            className="select"
-            required
-          >
-            <option disabled={true}>Select Event Type</option>
-            <option>Cleanup</option>
-            <option>Plantation</option>
-            <option>Donation</option>
-            <option>Others</option>
-          </select>
+            <label className="label">Description</label>
+            <textarea
+              className="textarea"
+              name="description"
+              placeholder="Description"
+              required
+            ></textarea>
 
-          <label className="label">Image URL</label>
-          <input
-            type="URL"
-            className="input"
-            name="image"
-            placeholder="Image URL"
-            required
-          />
+            <label className="label">Event Type</label>
+            <select
+              defaultValue="Pick a color"
+              name="event-type"
+              className="select"
+              required
+            >
+              <option disabled={true}>Select Event Type</option>
+              <option>Cleanup</option>
+              <option>Plantation</option>
+              <option>Donation</option>
+              <option>Others</option>
+            </select>
 
-          <label className="label">Location</label>
-          <input
-            type="text"
-            className="input"
-            name="location"
-            placeholder="Location"
-            required
-          />
+            <label className="label">Image URL</label>
+            <input
+              type="URL"
+              className="input"
+              name="image"
+              placeholder="Image URL"
+              required
+            />
 
-          <label className="label">Event Date</label>
-          <DatePicker
-            selected={eventDate}
-            onChange={(date) => setEventDate(date)}
-            minDate={new Date()}
-            customInput={<CustomInput />}
-            required
-          />
+            <label className="label">Location</label>
+            <input
+              type="text"
+              className="input"
+              name="location"
+              placeholder="Location"
+              required
+            />
 
-          <button type="submit" className="btn w-full mt-3">
-            Create Event
-          </button>
-        </fieldset>
-      </form>
+            <label className="label">Event Date</label>
+            <DatePicker
+              selected={eventDate}
+              onChange={(date) => setEventDate(date)}
+              minDate={new Date()}
+              customInput={<CustomInput />}
+              required
+            />
+
+            <button type="submit" className="btn w-full mt-3">
+              Create Event
+            </button>
+          </fieldset>
+        </form>
+      </div>
     </div>
   );
 };

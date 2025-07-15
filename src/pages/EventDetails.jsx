@@ -54,8 +54,8 @@ const EventDetails = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#F5F1F0] px-4 py-12">
-      <h1 className="text-4xl font-bold text-center mb-20 text-[#493628]">
+    <div className="min-h-screen px-4 py-12">
+      <h1 className="text-4xl font-bold text-center mb-20">
         Event Information
       </h1>
 
@@ -67,15 +67,15 @@ const EventDetails = () => {
             className="max-w-sm rounded-xl shadow-2xl object-cover w-full lg:w-[400px] h-auto"
           />
 
-          <div className="text-[#493628] max-w-lg">
+          <div className="max-w-lg">
             <h1 className="text-3xl lg:text-4xl font-bold mb-4">
               {event.title}
             </h1>
-            <p className="text-[#AB886D] font-medium mb-2">
+            <p className="font-medium mb-2">
               📍 {event.location}
             </p>
-            <p className="text-[#AB886D] font-medium mb-2">📅 {event.date}</p>
-            <p className="text-[#AB886D] font-medium italic mb-4">
+            <p className="font-medium mb-2">📅 {event.date}</p>
+            <p className="font-medium italic mb-4">
               Type: {event["event-type"]}
             </p>
             <p className="mb-6">

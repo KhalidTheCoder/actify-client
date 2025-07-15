@@ -35,9 +35,9 @@ const UpcomingEvents = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className="min-h-screen bg-[#E4E0E1]">
+    <div className="min-h-screen">
       <div className="max-w-7xl mx-auto px-4 py-10">
-        <h1 className="text-4xl font-bold text-center mb-10 text-[#493628]">
+        <h1 className="text-4xl font-bold text-center mb-10">
           Upcoming Events
         </h1>
 
@@ -48,7 +48,7 @@ const UpcomingEvents = () => {
               placeholder="Search Event"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="input input-bordered rounded-r-none w-full"
+              className="input rounded-r-none w-full"
             />
             <button
               onClick={handleSearchClick}
