@@ -26,7 +26,11 @@ const EventDetails = () => {
 
   const handleJoinEvent = async (joinedEvent) => {
     try {
-      await axios.post("http://localhost:3000/joined-events", joinedEvent);
+      await axios.post("http://localhost:3000/joined-events", joinedEvent, {
+        headers: {
+          Authorization: `Bearer ${user.accessToken}`,
+        },
+      });
       Swal.fire("Joined!", "You've successfully joined the event.", "success");
     } catch (err) {
       const status = err.response?.status;
@@ -63,7 +67,6 @@ const EventDetails = () => {
             className="max-w-sm rounded-xl shadow-2xl object-cover w-full lg:w-[400px] h-auto"
           />
 
-         
           <div className="text-[#493628] max-w-lg">
             <h1 className="text-3xl lg:text-4xl font-bold mb-4">
               {event.title}

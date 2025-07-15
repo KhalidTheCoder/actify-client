@@ -11,12 +11,17 @@ const ManageEvents = () => {
   const [showModal, setShowModal] = useState(false);
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [loading, setLoading] = useState(true);
+  const token = user?.accessToken;
 
   useEffect(() => {
     if (!user?.email) return;
 
     axios
-      .get(`http://localhost:3000/manage/events?email=${user.email}`)
+      .get(`http://localhost:3000/manage/events?email=${user.email}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then((res) => {
         setManageEvents(res.data);
         setLoading(false);
@@ -33,21 +38,24 @@ const ManageEvents = () => {
   };
 
   const handleUpdateSubmit = (updatedEvent) => {
-  fetch(`http://localhost:3000/events/${selectedEvent._id}`, {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(updatedEvent),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      const updatedList = manageEvents.map((e) =>
-        e._id === selectedEvent._id ? { ...e, ...updatedEvent } : e
-      );
-      setManageEvents(updatedList);
-      setShowModal(false);
-      setSelectedEvent(null);
-    });
-};
+    fetch(`http://localhost:3000/events/${selectedEvent._id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(updatedEvent),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const updatedList = manageEvents.map((e) =>
+          e._id === selectedEvent._id ? { ...e, ...updatedEvent } : e
+        );
+        setManageEvents(updatedList);
+        setShowModal(false);
+        setSelectedEvent(null);
+      });
+  };
 
   if (loading) return <Loading />;
 
