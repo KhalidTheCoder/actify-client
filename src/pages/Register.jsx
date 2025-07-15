@@ -91,7 +91,7 @@ const Register = () => {
   return (
     <div>
       <div
-        style={{ minHeight: "calc(100vh - 250px)" }}
+        style={{ minHeight: "calc(100vh - 220px)" }}
         className="min-h-screen flex items-center justify-center p-4"
       >
         <div className="flex flex-col-reverse md:flex-row justify-center gap-8 items-center w-full max-w-6xl">
