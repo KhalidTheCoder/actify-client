@@ -46,7 +46,7 @@ const SignIn = () => {
 
   return (
     <div
-      style={{ minHeight: "calc(100vh - 250px)" }}
+      style={{ minHeight: "calc(100vh - 220px)" }}
       className="min-h-screen flex items-center justify-center px-4 py-8"
     >
       <div className="flex flex-col md:flex-row justify-center items-center gap-8 w-full max-w-6xl">
