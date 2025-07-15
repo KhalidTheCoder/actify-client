@@ -8,12 +8,15 @@ const JoinedEvents = () => {
   const { user } = useContext(AuthContext);
   const [joinedEvents, setJoinedEvents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const token = user?.accessToken;
 
   useEffect(() => {
     if (!user?.email) return; 
 
     axios
-      .get(`http://localhost:3000/joined-events?email=${user.email}`)
+      .get(`http://localhost:3000/joined-events?email=${user.email}`,{ headers: {
+          Authorization: `Bearer ${token}`,
+        },})
       .then((res) => {
         setJoinedEvents(res.data);
         setLoading(false);

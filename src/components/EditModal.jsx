@@ -124,6 +124,7 @@ const EditModal = ({ event, onClose, onSubmit }) => {
               <option>Cleanup</option>
               <option>Plantation</option>
               <option>Donation</option>
+              <option>Others</option>
             </select>
           </div>
 

@@ -24,6 +24,8 @@ const CreateEvent = () => {
   const navigate = useNavigate();
   const [eventDate, setEventDate] = useState(null);
   const { user } = useContext(AuthContext);
+  const token = user?.accessToken;
+  
 
   const handleAddEvent = (e) => {
     e.preventDefault();
@@ -38,9 +40,17 @@ const CreateEvent = () => {
       return toast.error("Please select an event date.");
     }
 
-    console.log(data);
+    if (!data.title || data.title.trim().length < 3) {
+      return toast.error("Title must be at least 3 characters long.");
+    }
+
+    
     axios
-      .post("http://localhost:3000/events", data)
+      .post("http://localhost:3000/events", data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({
@@ -94,6 +104,7 @@ const CreateEvent = () => {
             <option>Cleanup</option>
             <option>Plantation</option>
             <option>Donation</option>
+            <option>Others</option>
           </select>
 
           <label className="label">Image URL</label>
