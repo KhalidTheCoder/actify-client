@@ -9,11 +9,13 @@ import CreateEvent from "../pages/CreateEvent";
 import EventDetails from "../pages/EventDetails";
 import JoinedEvents from "../pages/JoinedEvents";
 import ManageEvents from "../pages/ManageEvents";
+import Error from "../pages/Error";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <Error />,
     children: [
       {
         index: true,
@@ -63,6 +65,10 @@ export const router = createBrowserRouter([
             <ManageEvents></ManageEvents>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "*",
+        element: <Error />,
       },
     ],
   },
