@@ -9,7 +9,6 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 import formlottie from "../assets/lottie/form.json";
-import bg from "../assets/bg.jpg";
 import Lottie from "lottie-react";
 
 const CustomInput = forwardRef(({ value, onClick }, ref) => (

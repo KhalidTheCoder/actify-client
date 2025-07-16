@@ -30,8 +30,8 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="bg-[#F5EFE6] py-16 px-6">
-      <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-xl p-10 text-center">
+    <section className="bg-[#F5EFE6] py-16 px-6 relative">
+      <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-xl p-10 text-center relative -mt-50 z-10">
         <p className="text-sm uppercase tracking-wider text-[#AB886D] font-medium mb-2">
           Join Our Community
         </p>
