@@ -1,12 +1,59 @@
-# React + Vite
+# 🌱 Actify - Social Development Events Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Site:** [https://actify-bc56f.web.app/](https://actify-bc56f.web.app/)  
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📌 Project Purpose
+Actify is a community-driven event management platform designed to promote local social development. Users can create, join, and track impactful events like cleanups, plantation drives, and donation camps in their area.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Key Features
+
+- 🔐 Firebase Authentication (Email/Password & Google)
+- 📅 Create, manage & join social events
+- 🔍 Filter & search upcoming events by type and title (MongoDB based)
+- 🔄 JWT-protected private routes
+- 🌗 Light/Dark Theme toggle
+- 📦 Responsive design for mobile, tablet, and desktop
+- 📧 Newsletter subscription (UI only)
+- ✨ Animation using Framer Motion
+- 📤 Hosted on Firebase (Client) & Vercel (Server)
+
+---
+
+## 🛠️ NPM Packages Used
+
+### Client:
+- `react-router-dom`
+- `firebase`
+- `axios`
+- `react-hook-form`
+- `react-hot-toast`
+- `framer-motion`
+- `react-datepicker`
+- `jwt-decode`
+- `tailwindcss`
+- `lottie-react` 
+
+### Server:
+- `express`
+- `cors`
+- `dotenv`
+- `mongodb`
+- `firebase-admin`
+- `jsonwebtoken`
+
+---
+
+## ✅ Deployment
+- **Client:** Firebase Hosting  
+- **Server:** Vercel  
+- **Environment Variables:** Secured via `.env` and Vercel Dashboard
+
+---
+
+> Made with 💚 to encourage local action & community growth.
+

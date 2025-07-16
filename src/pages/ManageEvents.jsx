@@ -4,6 +4,7 @@ import axios from "axios";
 import Loading from "../components/Loading";
 import ManageEventsCard from "../components/ManageEventsCard";
 import EditModal from "../components/EditModal";
+import NoCreatedEvent from "../components/NoCreatedEvent";
 
 const ManageEvents = () => {
   const { user } = useContext(AuthContext);
@@ -17,7 +18,7 @@ const ManageEvents = () => {
     if (!user?.email) return;
 
     axios
-      .get(`http://localhost:3000/manage/events?email=${user.email}`, {
+      .get(`https://actify-server.vercel.app/manage/events?email=${user.email}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -38,7 +39,7 @@ const ManageEvents = () => {
   };
 
   const handleUpdateSubmit = (updatedEvent) => {
-    fetch(`http://localhost:3000/events/${selectedEvent._id}`, {
+    fetch(`https://actify-server.vercel.app/events/${selectedEvent._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -67,9 +68,7 @@ const ManageEvents = () => {
         </h1>
 
         {manageEvents.length === 0 ? (
-          <p className="text-center text-[#AB886D]">
-            You haven't joined any events yet.
-          </p>
+          <NoCreatedEvent></NoCreatedEvent>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             {manageEvents.map((event) => (

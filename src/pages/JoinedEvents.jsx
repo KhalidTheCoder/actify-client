@@ -15,7 +15,7 @@ const JoinedEvents = () => {
     if (!user?.email) return; 
 
     axios
-      .get(`http://localhost:3000/joined-events?email=${user.email}`,{ headers: {
+      .get(`https://actify-server.vercel.app/joined-events?email=${user.email}`,{ headers: {
           Authorization: `Bearer ${token}`,
         },})
       .then((res) => {

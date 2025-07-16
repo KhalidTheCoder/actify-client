@@ -13,7 +13,7 @@ const EventDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/events/${id}`)
+      .get(`https://actify-server.vercel.app/events/${id}`)
       .then((res) => {
         setEvent(res.data);
         setLoading(false);
@@ -26,7 +26,7 @@ const EventDetails = () => {
 
   const handleJoinEvent = async (joinedEvent) => {
     try {
-      await axios.post("http://localhost:3000/joined-events", joinedEvent, {
+      await axios.post("https://actify-server.vercel.app/joined-events", joinedEvent, {
         headers: {
           Authorization: `Bearer ${user.accessToken}`,
         },
