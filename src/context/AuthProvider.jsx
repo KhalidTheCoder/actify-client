@@ -49,7 +49,7 @@ const AuthProvider = ({ children }) => {
 
     if (loggedInUser) {
       
-      axios.get("http://localhost:3000", {
+      axios.get("https://actify-server.vercel.app", {
         headers: {
           Authorization: `Bearer ${loggedInUser.accessToken}`,
         },

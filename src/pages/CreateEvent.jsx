@@ -46,7 +46,7 @@ const CreateEvent = () => {
     }
 
     axios
-      .post("http://localhost:3000/events", data, {
+      .post("https://actify-server.vercel.app/events", data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -145,7 +145,7 @@ const CreateEvent = () => {
               required
             />
 
-            <button type="submit" className="btn w-full mt-3">
+            <button type="submit" className="btn w-full mt-3 border-none font-semibold rounded-md bg-[#AB886D] text-white hover:bg-[#8B6D54] focus:ring-2 focus:ring-[#AB886D]">
               Create Event
             </button>
           </fieldset>

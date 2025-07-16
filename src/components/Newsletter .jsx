@@ -10,7 +10,7 @@ const Newsletter = () => {
 
     const email = e.target.email.value;
     axios
-      .post("http://localhost:3000/newsletter", { email })
+      .post("https://actify-server.vercel.app/newsletter", { email })
       .then((res) => {
         if (res.data.insertedId) {
           Swal.fire({
@@ -53,7 +53,7 @@ const Newsletter = () => {
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email address"
+            placeholder="Your email address"
             required
             className="w-full sm:w-2/3 px-4 py-3 rounded-md border-2 border-[#AB886D] bg-[#FDFBF9] text-[#493628] placeholder-[#AB886D] focus:outline-none focus:ring-2 focus:ring-[#AB886D] transition"
           />

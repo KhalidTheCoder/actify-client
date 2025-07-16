@@ -16,7 +16,7 @@ const UpcomingEvents = () => {
     if (searchTerm) params.append("search", searchTerm);
     if (eventType !== "All") params.append("type", eventType);
 
-    fetch(`http://localhost:3000/events/upcoming?${params.toString()}`)
+    fetch(`https://actify-server.vercel.app/events/upcoming?${params.toString()}`)
       .then((res) => res.json())
       .then((data) => {
         setEvents(data);
