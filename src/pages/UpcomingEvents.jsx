@@ -48,11 +48,11 @@ const UpcomingEvents = () => {
               placeholder="Search Event"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="input rounded-r-none w-full"
+              className="input rounded-r-none bg-[#F5EFE6] focus:bg-white border-2 border-[#AB886D] text-[#493628] w-full placeholder:text-[#AB886D]"
             />
             <button
               onClick={handleSearchClick}
-              className="btn rounded-l-none px-4 bg-[#AB886D] text-white hover:bg-[#8B6D54] focus:ring-2 focus:ring-[#AB886D]"
+              className="btn rounded-l-none px-4 bg-[#AB886D] border-2 border-[#AB886D]  text-white hover:bg-[#8B6D54] focus:ring-2 focus:ring-[#AB886D]"
             >
               Search
             </button>
@@ -61,7 +61,7 @@ const UpcomingEvents = () => {
           <select
             value={eventType}
             onChange={(e) => setEventType(e.target.value)}
-            className="select select-bordered w-full md:w-1/4"
+            className="select w-full md:w-1/4 bg-[#F5EFE6] border-2 border-[#AB886D] text-[#493628] font-semibold placeholder-[#AB886D] focus:outline-none focus:ring-2 focus:ring-[#AB886D] focus:border-[#AB886D] transition"
           >
             <option value="All">All</option>
             <option value="Cleanup">Cleanup</option>
