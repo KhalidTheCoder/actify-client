@@ -82,9 +82,9 @@ Actify is a community-driven event management platform designed to promote local
     cd actify-client
     npm install
 
-4.Create a .env file in the client folder and add your environment variables (example):
-
-    ```ini
+4. Create a .env file in the client folder and add your environment variables (example):
+   
+     ```ini
     VITE_API_URL=http://localhost:5000
 
     VITE_apiKey=your_firebase_api_key
