@@ -57,3 +57,14 @@ Actify is a community-driven event management platform designed to promote local
 
 > Made with 💚 to encourage local action & community growth.
 
+
+---
+
+## 🚀 How to Run Locally
+
+1. **Clone both repositories:**
+
+   ```bash
+   git clone https://github.com/KhalidTheCoder/actify-client.git
+   git clone https://github.com/KhalidTheCoder/actify-server.git
+
