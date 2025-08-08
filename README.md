@@ -76,7 +76,7 @@ Actify is a community-driven event management platform designed to promote local
    
 3. Set up and run the client:
    
-   - Open a new terminal and navigate to the client directory:
+   Open a new terminal and navigate to the client directory:
      
     ```bash
     cd actify-client
