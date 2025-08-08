@@ -27,7 +27,7 @@ Actify is a community-driven event management platform designed to promote local
 ## 🛠️ NPM Packages Used
 
 ### Client:
-- `react-router-dom`
+- `react-router`
 - `firebase`
 - `axios`
 - `react-hook-form`
