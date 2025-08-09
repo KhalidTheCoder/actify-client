@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Loading from "../components/Loading";
+import { Link } from "react-router";
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
@@ -47,12 +48,12 @@ const Blogs = () => {
                 {blog.excerpt || blog.content?.slice(0, 120) + "..."}
               </p>
 
-              <button
-                onClick={() => alert("Navigate to blog details here!")}
-                className="mt-6 bg-[#AB886D] hover:bg-[#8b6d4b] text-white font-semibold py-2 rounded-full transition-colors duration-300"
+              <Link
+                to={`/blog/${blog._id}`}
+                className="mt-6 block bg-[#AB886D] hover:bg-[#8b6d4b] text-white font-semibold py-2 rounded-full text-center transition-colors duration-300"
               >
                 Read More
-              </button>
+              </Link>
             </div>
           </div>
         ))}
