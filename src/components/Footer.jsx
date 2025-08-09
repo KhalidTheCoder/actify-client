@@ -26,6 +26,11 @@ const Footer = () => {
             </Link>
           </li>
           <li>
+            <Link to="/blogs" className="link link-hover">
+              Blog & Articles
+            </Link>
+          </li>
+          <li>
             <Link to="/create-event" className="link link-hover">
               Create Event
             </Link>
