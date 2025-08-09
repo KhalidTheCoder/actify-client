@@ -4,6 +4,7 @@ import { AuthContext } from "../context/AuthContext";
 import axios from "axios";
 import Loading from "../components/Loading";
 import Swal from "sweetalert2";
+import NoEventDetails from "../components/NoEventDetails";
 
 const EventDetails = () => {
   const { id } = useParams();
@@ -26,11 +27,15 @@ const EventDetails = () => {
 
   const handleJoinEvent = async (joinedEvent) => {
     try {
-      await axios.post("https://actify-server.vercel.app/joined-events", joinedEvent, {
-        headers: {
-          Authorization: `Bearer ${user.accessToken}`,
-        },
-      });
+      await axios.post(
+        "https://actify-server.vercel.app/joined-events",
+        joinedEvent,
+        {
+          headers: {
+            Authorization: `Bearer ${user.accessToken}`,
+          },
+        }
+      );
       Swal.fire("Joined!", "You've successfully joined the event.", "success");
     } catch (err) {
       const status = err.response?.status;
@@ -50,7 +55,7 @@ const EventDetails = () => {
   if (loading) return <Loading />;
 
   if (!event) {
-    return <p>Empty</p>;
+    return <NoEventDetails></NoEventDetails>;
   }
 
   return (
@@ -71,9 +76,7 @@ const EventDetails = () => {
             <h1 className="text-3xl lg:text-4xl font-bold mb-4">
               {event.title}
             </h1>
-            <p className="font-medium mb-2">
-              📍 {event.location}
-            </p>
+            <p className="font-medium mb-2">📍 {event.location}</p>
             <p className="font-medium mb-2">📅 {event.date}</p>
             <p className="font-medium italic mb-4">
               Type: {event["event-type"]}

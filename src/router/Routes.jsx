@@ -11,6 +11,7 @@ import JoinedEvents from "../pages/JoinedEvents";
 import ManageEvents from "../pages/ManageEvents";
 import Error from "../pages/Error";
 import Blogs from "../pages/Blogs";
+import BlogDetails from "../components/BlogDetails";
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: "/blogs",
         Component: Blogs,
+      },
+      {
+        path: "/blog/:id",
+        Component: BlogDetails,
       },
       {
         path: "/login",
