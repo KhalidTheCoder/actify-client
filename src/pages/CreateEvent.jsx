@@ -1,7 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect, forwardRef } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { forwardRef } from "react";
 import { format } from "date-fns";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -10,6 +9,8 @@ import { useNavigate } from "react-router";
 import { AuthContext } from "../context/AuthContext";
 import formlottie from "../assets/lottie/form.json";
 import Lottie from "lottie-react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const CustomInput = forwardRef(({ value, onClick }, ref) => (
   <button
@@ -25,8 +26,13 @@ const CustomInput = forwardRef(({ value, onClick }, ref) => (
 const CreateEvent = () => {
   const navigate = useNavigate();
   const [eventDate, setEventDate] = useState(null);
+  const [eventType, setEventType] = useState("");
   const { user } = useContext(AuthContext);
   const token = user?.accessToken;
+
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true, easing: "ease-in-out" });
+  }, []);
 
   const handleAddEvent = (e) => {
     e.preventDefault();
@@ -70,22 +76,32 @@ const CreateEvent = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
-      <div className="flex justify-center items-center">
-        <h1 className="text-4xl font-extrabold text-center mb-10">Create Event</h1>
+      <div
+        className="flex justify-center items-center"
+        data-aos="fade-down"
+        data-aos-delay="100"
+      >
+        <h1 className="text-4xl font-extrabold text-center mb-10">
+          Create Event
+        </h1>
       </div>
 
       <div className="flex flex-col md:flex-row justify-center items-center gap-8 w-full max-w-6xl">
-        <div>
+        <div data-aos="fade-right" data-aos-delay="200">
           <Lottie
             style={{ width: "400px" }}
             animationData={formlottie}
             loop={true}
-          ></Lottie>
+          />
         </div>
 
-        <form onSubmit={handleAddEvent}>
-          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs max-w-6xl border p-4">
-            <legend className="fieldset-legend">Event Details</legend>
+        <form
+          onSubmit={handleAddEvent}
+          data-aos="fade-left"
+          data-aos-delay="300"
+        >
+          <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs max-w-6xl border p-4 shadow-lg">
+            <legend className="fieldset-legend font-bold">Event Details</legend>
 
             <label className="label">Title</label>
             <input
@@ -106,16 +122,19 @@ const CreateEvent = () => {
 
             <label className="label">Event Type</label>
             <select
-              defaultValue="Pick a color"
               name="event-type"
               className="select"
+              value={eventType}
+              onChange={(e) => setEventType(e.target.value)}
               required
             >
-              <option disabled={true}>Select Event Type</option>
-              <option>Cleanup</option>
-              <option>Plantation</option>
-              <option>Donation</option>
-              <option>Others</option>
+              <option value="" disabled>
+                Select Event Type
+              </option>
+              <option value="Cleanup">Cleanup</option>
+              <option value="Plantation">Plantation</option>
+              <option value="Donation">Donation</option>
+              <option value="Others">Others</option>
             </select>
 
             <label className="label">Image URL</label>
@@ -145,7 +164,10 @@ const CreateEvent = () => {
               required
             />
 
-            <button type="submit" className="btn w-full mt-3 border-none font-semibold rounded-md bg-[#AB886D] text-white hover:bg-[#8B6D54] focus:ring-2 focus:ring-[#AB886D]">
+            <button
+              type="submit"
+              className="btn w-full mt-3 border-none font-semibold rounded-md bg-[#AB886D] text-white hover:bg-[#8B6D54] focus:ring-2 focus:ring-[#AB886D]"
+            >
               Create Event
             </button>
           </fieldset>

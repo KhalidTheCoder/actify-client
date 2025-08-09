@@ -12,7 +12,7 @@ const Blogs = () => {
     AOS.init({
       duration: 900,
       easing: "ease-in-out",
-      once: true,
+      once: false,
       mirror: false,
     });
 

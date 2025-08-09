@@ -1,5 +1,5 @@
 import Lottie from "lottie-react";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router";
 import registerlottie from "../assets/lottie/register.json";
@@ -7,6 +7,8 @@ import { AuthContext } from "../context/AuthContext";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Register = () => {
   const { createUser, setUser, signInWithGoogle } = useContext(AuthContext);
@@ -14,6 +16,10 @@ const Register = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -41,7 +47,6 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
         updateProfile(result.user, {
           displayName: userProfile.name,
           photoURL: userProfile.photo,
@@ -95,7 +100,10 @@ const Register = () => {
         className="min-h-screen flex items-center justify-center p-4"
       >
         <div className="flex flex-col-reverse md:flex-row justify-center gap-8 items-center w-full max-w-6xl">
-          <div className="w-full max-w-md p-6 rounded-lg shadow-md bg-[#FCF7F8] text-[#493628]">
+          <div
+            className="w-full max-w-md p-6 rounded-lg shadow-md bg-[#FCF7F8] text-[#493628]"
+            data-aos="fade-right"
+          >
             <h2 className="mb-3 text-3xl font-semibold text-center text-[#493628]">
               Register your account
             </h2>
@@ -109,7 +117,7 @@ const Register = () => {
               </Link>
             </p>
 
-            <div className="my-6 space-y-4">
+            <div className="my-6 space-y-4" data-aos="zoom-in">
               <button
                 onClick={handleGoogleSignUp}
                 className="btn w-full border border-[#D6C0B3] bg-white text-[#493628] hover:bg-[#D6C0B3]/20"
@@ -118,13 +126,17 @@ const Register = () => {
               </button>
             </div>
 
-            <div className="flex items-center w-full my-4">
+            <div className="flex items-center w-full my-4" data-aos="fade-up">
               <hr className="w-full border-gray-400" />
               <p className="px-2 text-gray-600 text-sm">OR</p>
               <hr className="w-full border-gray-400" />
             </div>
 
-            <form onSubmit={handleSignUp} className="space-y-5">
+            <form
+              onSubmit={handleSignUp}
+              className="space-y-5"
+              data-aos="fade-up"
+            >
               <div>
                 <label
                   htmlFor="name"
@@ -206,7 +218,7 @@ const Register = () => {
             </form>
           </div>
 
-          <div>
+          <div data-aos="fade-left">
             <Lottie
               style={{ width: "400px" }}
               animationData={registerlottie}

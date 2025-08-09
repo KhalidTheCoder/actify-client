@@ -17,7 +17,7 @@ const JoinedEvents = () => {
     AOS.init({
       duration: 1000,
       easing: "ease-out-back",
-      once: true,
+      once: false,
     });
 
     if (!user?.email) return;

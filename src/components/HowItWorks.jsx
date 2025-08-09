@@ -13,7 +13,7 @@ const HowItWorks = () => {
     AOS.init({
       duration: 900,
       easing: "ease-in-out",
-      once: true,
+      once: false,
     });
   }, []);
 
@@ -53,7 +53,7 @@ const HowItWorks = () => {
         steps.
       </p>
 
-      <div className="flex flex-col md:flex-row justify-between gap-8">
+      <div className="flex flex-col py-12 md:flex-row justify-between gap-8">
         {steps.map((step, idx) => (
           <div
             key={idx}
