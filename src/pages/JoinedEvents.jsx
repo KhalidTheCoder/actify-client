@@ -49,7 +49,7 @@ const JoinedEvents = () => {
       <div className="max-w-7xl mx-auto">
         <h1
           data-aos="fade-down"
-          className="text-4xl font-bold text-center mb-10"
+          className="text-4xl font-extrabold text-center mb-10"
         >
           Events You've Joined
         </h1>

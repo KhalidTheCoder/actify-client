@@ -60,7 +60,7 @@ const EventDetails = () => {
 
   return (
     <div className="min-h-screen px-4 py-12">
-      <h1 className="text-4xl font-bold text-center mb-20">
+      <h1 className="text-4xl font-extrabold text-center mb-20">
         Event Information
       </h1>
 
