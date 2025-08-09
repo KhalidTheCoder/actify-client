@@ -1,0 +1,122 @@
+[
+  {
+    "_id": "1",
+    "title": "The Power of Community Cleanups: How Small Actions Create Big Change",
+    "excerpt": "Discover how local cleanup events bring communities together to restore the environment and foster social bonds.",
+    "content": "Community cleanups are more than just picking up litter. They represent a collective effort to reclaim public spaces, build awareness, and inspire stewardship. When neighbors come together to clean parks, streets, and waterways, it enhances not only the environment but also social cohesion. Volunteers gain a sense of pride and ownership, which leads to sustained care for the area. Learn tips on organizing successful cleanup events and how they can spark a ripple effect of positive community actions.",
+    "thumbnail": "https://i.ibb.co.com/bjJDY4v4/1.jpg",
+    "author": "Ayesha Khan",
+    "date": "2025-06-12",
+    "tags": ["Community", "Cleanup", "Environment", "Volunteering"]
+  },
+  {
+    "_id": "2",
+    "title": "Plantation Drives: Growing Greener Cities Together",
+    "excerpt": "Plantation drives not only beautify neighborhoods but also combat climate change—learn how to get involved.",
+    "content": "Plantation drives have become an essential part of urban sustainability. Trees improve air quality, reduce heat islands, and provide habitats for urban wildlife. But their benefits extend beyond ecology: these drives create opportunities for neighbors to bond and work toward a shared goal. This blog covers the environmental benefits of trees, best practices for organizing plantation drives, and success stories from cities that have embraced green initiatives. Discover how planting one tree today can shape a better tomorrow.",
+    "thumbnail": "https://i.ibb.co.com/sdrZ4NKg/2.jpg",
+    "author": "Rafiq Ahmed",
+    "date": "2025-07-05",
+    "tags": ["Plantation", "Green Cities", "Climate Action", "Community"]
+  },
+  {
+    "_id": "3",
+    "title": "Donation Camps: Creating Impact One Contribution at a Time",
+    "excerpt": "Explore how donation camps serve as vital lifelines for vulnerable communities and how you can organize one.",
+    "content": "Donation camps gather resources such as clothes, food, and medicines to support those in need. They rely heavily on volunteers and community participation to collect, sort, and distribute donations efficiently. Organizing a successful donation camp requires strategic planning, outreach, and partnerships with local organizations. This article guides you through the steps to launch impactful donation drives, shares tips to maximize engagement, and highlights inspiring stories of lives changed through generosity.",
+    "thumbnail": "https://i.ibb.co.com/KpP0cDBT/donated-clothes.webp",
+    "author": "Fatima Noor",
+    "date": "2025-07-20",
+    "tags": ["Donation", "Community Support", "Volunteering", "Social Impact"]
+  },
+  {
+    "_id": "4",
+    "title": "Volunteer Spotlights: Stories From Actify’s Heartbeat",
+    "excerpt": "Meet the dedicated volunteers who drive Actify’s mission forward with passion and perseverance.",
+    "content": "Behind every successful event is a team of passionate volunteers. In this series, we highlight inspiring stories from volunteers across various social development projects — from youth leaders mobilizing cleanups to retirees dedicating weekends for plantation drives. Learn about their motivations, challenges, and the rewarding moments that keep them engaged. Their stories showcase how individual contributions weave into a larger tapestry of community transformation.",
+    "thumbnail": "https://i.ibb.co.com/Q7nN4fFz/photo-1494790108377-be9c29b29330.jpg",
+    "author": "Khalid Ahsan",
+    "date": "2025-08-01",
+    "tags": ["Volunteering", "Community", "Inspiration", "Stories"]
+  },
+  {
+    "_id": "5",
+    "title": "How to Plan a Successful Social Development Event",
+    "excerpt": "Step-by-step guide to organizing impactful events that bring real change to your community.",
+    "content": "Planning an event that drives social change requires careful consideration and collaboration. From setting clear objectives and mobilizing volunteers to logistics and promotion, each step matters. This blog post walks you through actionable tips and proven strategies to make your event a success. Learn how to secure sponsorships, engage local media, and evaluate your event’s impact for continuous improvement. Whether it’s a small neighborhood cleanup or a large donation camp, proper planning amplifies your results.",
+    "thumbnail": "https://i.ibb.co.com/vC8mZqdM/photo-1556740749-887f6717d7e4.jpg",
+    "author": "Sara Malik",
+    "date": "2025-08-10",
+    "tags": ["Event Planning", "Community", "Tips", "Volunteering"]
+  },
+  {
+    "_id": "6",
+    "title": "The Role of Technology in Social Development Events",
+    "excerpt": "Explore how digital tools and platforms like Actify enhance event organization and community engagement.",
+    "content": "Technology has revolutionized how communities organize and participate in social development events. Platforms like Actify simplify event creation, volunteer coordination, and communication. Mobile apps and social media amplify outreach, while data analytics provide insights into impact. This post dives into various tools that empower organizers and volunteers to work smarter, not harder. From event registration software to real-time feedback systems, learn how embracing technology can supercharge your social impact.",
+    "thumbnail": "https://i.ibb.co.com/zhGkdZGf/photo-1504384308090-c894fdcc538d.jpg",
+    "author": "Imran Siddiqui",
+    "date": "2025-08-18",
+    "tags": ["Technology", "Social Development", "Innovation", "Community"]
+  },
+  {
+    "_id": "7",
+    "title": "Success Stories: Transforming Neighborhoods Through Actify",
+    "excerpt": "Real-life accounts of neighborhoods uplifted by Actify-driven events and initiatives.",
+    "content": "Actify has been the catalyst for numerous transformative projects that rejuvenate neighborhoods. From revitalizing neglected parks to reducing waste through community cleanups, these success stories highlight the tangible benefits of collective action. This post features interviews with community leaders and participants sharing their journeys, challenges overcome, and lasting changes. It aims to inspire others to take initiative and see how small efforts, powered by Actify, can lead to big improvements.",
+    "thumbnail": "https://i.ibb.co.com/GfzGXwN3/photo-1494526585095-c41746248156.jpg",
+    "author": "Laila Hassan",
+    "date": "2025-08-25",
+    "tags": ["Success Stories", "Community", "Impact", "Actify"]
+  },
+  {
+    "_id": "8",
+    "title": "How to Engage Youth in Social Development Activities",
+    "excerpt": "Strategies to inspire and involve young people in creating lasting community change.",
+    "content": "Youth are the backbone of any thriving social movement. Engaging them effectively ensures the sustainability of development efforts. This article explores methods to motivate young people—from interactive workshops to leadership opportunities within Actify events. It discusses the importance of mentorship, creating inclusive environments, and leveraging digital platforms to meet youth where they are. Practical advice helps organizers foster a new generation of active citizens ready to lead positive change.",
+    "thumbnail": "https://i.ibb.co.com/xQ4xjwL/5ba9fd7e208e2-1024x683.jpg",
+    "author": "Amina Farooq",
+    "date": "2025-09-01",
+    "tags": ["Youth Engagement", "Community", "Leadership", "Volunteering"]
+  },
+  {
+    "_id": "9",
+    "title": "Building Partnerships for Greater Impact",
+    "excerpt": "Why collaboration with local organizations and businesses strengthens social development efforts.",
+    "content": "No event succeeds in isolation. Building strong partnerships expands reach, resources, and credibility. This blog post outlines approaches to identify potential partners, create win-win agreements, and sustain long-term collaborations. Case studies highlight how Actify events leveraged partnerships to increase volunteer turnout, secure funding, and access expertise. Learn the art of networking and how collaborative efforts multiply social impact exponentially.",
+    "thumbnail": "https://i.ibb.co.com/Xx5MCjH3/handshake-190617-800x450.jpg",
+    "author": "Zain Malik",
+    "date": "2025-09-10",
+    "tags": ["Partnerships", "Collaboration", "Community", "Strategy"]
+  },
+  {
+    "_id": "10",
+    "title": "Measuring the Impact of Your Social Development Events",
+    "excerpt": "Tools and methods to evaluate and communicate the success of your events effectively.",
+    "content": "Measuring impact helps organizers understand what works and how to improve future events. This post covers quantitative and qualitative methods including surveys, attendance tracking, and feedback collection. Learn how to set meaningful goals, choose appropriate metrics, and use storytelling to share your event’s success with stakeholders. Effective impact measurement builds transparency, encourages support, and drives continuous improvement for social development initiatives.",
+    "thumbnail": "https://i.ibb.co.com/TMQ6F2qD/african-american-woman-analyzing-financial-600nw-2479011393.jpg",
+    "author": "Hassan Raza",
+    "date": "2025-09-15",
+    "tags": ["Impact Measurement", "Evaluation", "Community", "Events"]
+  },
+  {
+    "_id": "11",
+    "title": "Inclusivity in Social Events: Making Everyone Feel Welcome",
+    "excerpt": "Learn how to design social development events that embrace diversity and promote inclusivity for all community members.",
+    "content": "Inclusivity is key to the success of any social event. By acknowledging different backgrounds, abilities, and perspectives, organizers can foster environments where everyone feels valued. This blog covers practical tips on accessibility, language, cultural sensitivity, and engagement strategies. Creating inclusive events not only broadens participation but also strengthens community bonds and promotes equity.",
+    "thumbnail": "https://i.ibb.co.com/0Rg57ptP/photo-1508214751196-bcfd4ca60f91.jpg",
+    "author": "Mariam Ali",
+    "date": "2025-09-22",
+    "tags": ["Inclusivity", "Diversity", "Community", "Social Impact"]
+  },
+  {
+    "_id": "12",
+    "title": "Sustainable Practices for Green Social Events",
+    "excerpt": "Discover how to reduce the environmental footprint of your social development events through sustainable practices.",
+    "content": "Hosting eco-friendly events is becoming increasingly important in community development. This article explores sustainable practices such as waste reduction, using biodegradable materials, energy conservation, and promoting public transport. It also highlights examples of green events that have successfully minimized their environmental impact. By adopting these practices, organizers contribute to a healthier planet while inspiring participants to live sustainably.",
+    "thumbnail": "https://i.ibb.co.com/G3kcBNmw/photo-1462331940025-496dfbfc7564.jpg",
+    "author": "Bilal Khan",
+    "date": "2025-09-28",
+    "tags": ["Sustainability", "Green Events", "Environment", "Community"]
+  }
+]

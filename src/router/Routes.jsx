@@ -10,6 +10,7 @@ import EventDetails from "../pages/EventDetails";
 import JoinedEvents from "../pages/JoinedEvents";
 import ManageEvents from "../pages/ManageEvents";
 import Error from "../pages/Error";
+import Blogs from "../pages/Blogs";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
         index: true,
         path: "/",
         Component: Home,
+      },
+      {
+        path: "/blogs",
+        Component: Blogs,
       },
       {
         path: "/login",
