@@ -5,6 +5,8 @@ import Loading from "../components/Loading";
 import ManageEventsCard from "../components/ManageEventsCard";
 import EditModal from "../components/EditModal";
 import NoCreatedEvent from "../components/NoCreatedEvent";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const ManageEvents = () => {
   const { user } = useContext(AuthContext);
@@ -15,26 +17,36 @@ const ManageEvents = () => {
   const token = user?.accessToken;
 
   useEffect(() => {
+    AOS.init({
+      duration: 900,
+      easing: "ease-in-out",
+      once: true,
+    });
+
     if (!user?.email) return;
 
     axios
-      .get(`https://actify-server.vercel.app/manage/events?email=${user.email}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+      .get(
+        `https://actify-server.vercel.app/manage/events?email=${user.email}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((res) => {
         setManageEvents(res.data);
         setLoading(false);
+        AOS.refresh();
       })
       .catch((err) => {
         console.error("Error fetching managed events", err);
         setLoading(false);
       });
-  }, [user?.email]);
+  }, [user?.email, token]);
 
-  const handleEditClick = (recipe) => {
-    setSelectedEvent(recipe);
+  const handleEditClick = (event) => {
+    setSelectedEvent(event);
     setShowModal(true);
   };
 
@@ -63,20 +75,33 @@ const ManageEvents = () => {
   return (
     <div className="min-h-screen py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-10">
+        <h1
+          data-aos="fade-down"
+          className="text-4xl font-bold text-center mb-10"
+        >
           Manage Events
         </h1>
 
         {manageEvents.length === 0 ? (
-          <NoCreatedEvent></NoCreatedEvent>
+          <NoCreatedEvent />
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-            {manageEvents.map((event) => (
-              <ManageEventsCard
+          <div
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center items-stretch"
+          >
+            {manageEvents.map((event, index) => (
+              <div
                 key={event._id}
-                onEdit={() => handleEditClick(event)}
-                event={event}
-              />
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+                className="flex justify-center w-full h-full"
+              >
+                <ManageEventsCard
+                  event={event}
+                  onEdit={() => handleEditClick(event)}
+                />
+              </div>
             ))}
           </div>
         )}
