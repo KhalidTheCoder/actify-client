@@ -33,6 +33,15 @@ const Navbar = () => {
             </span>
             <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-[#AB886D] to-[#E4E0E1] transition-all duration-300 group-hover:w-full"></span>
           </NavLink>
+          <NavLink
+            to="/blogs"
+            className="relative group transition duration-300"
+          >
+            <span className="text-[#E4E0E1] group-hover:text-white  font-semibold">
+              Blog & Articles
+            </span>
+            <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-gradient-to-r from-[#AB886D] to-[#E4E0E1] transition-all duration-300 group-hover:w-full"></span>
+          </NavLink>
         </div>
 
         <div className="navbar-end flex items-center gap-1.5">
@@ -136,6 +145,12 @@ const Navbar = () => {
             className="block py-2 text-[#E4E0E1] font-semibold hover:text-white"
           >
             Upcoming Events
+          </NavLink>
+          <NavLink
+            to="/blogs"
+            className="block py-2 text-[#E4E0E1] font-semibold hover:text-white"
+          >
+            Blog & Articles
           </NavLink>
         </div>
       )}
