@@ -20,7 +20,7 @@ const ManageEvents = () => {
     AOS.init({
       duration: 900,
       easing: "ease-in-out",
-      once: true,
+      once: false,
     });
 
     if (!user?.email) return;

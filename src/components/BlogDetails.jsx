@@ -3,6 +3,8 @@ import { useParams, useNavigate } from "react-router";
 import Loading from "../components/Loading";
 import NoBlog from "./NoBlog";
 import { FaUserAlt, FaCalendarAlt } from "react-icons/fa";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const BlogDetails = () => {
   const { id } = useParams();
@@ -12,6 +14,13 @@ const BlogDetails = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    AOS.init({
+      duration: 900,
+      easing: "ease-out",
+      once: false,
+      offset: 80,
+    });
+
     fetch("/blogs.json")
       .then((res) => res.json())
       .then((data) => {
@@ -26,22 +35,35 @@ const BlogDetails = () => {
   }, [id]);
 
   if (loading) return <Loading />;
-
-  if (!blog) return <NoBlog></NoBlog>;
+  if (!blog) return <NoBlog />;
 
   return (
     <div className="min-h-screen py-12 px-6 sm:px-12 max-w-4xl mx-auto">
-      <h1 className="text-4xl font-bold mb-6">{blog.title}</h1>
+      <h1 className="text-4xl font-bold mb-6" data-aos="fade-up">
+        {blog.title}
+      </h1>
 
       <img
         src={blog.thumbnail || "https://via.placeholder.com/800x400"}
         alt={blog.title}
-        className="w-full h-64 object-cover rounded-lg mb-8"
+        className="w-full h-64 object-cover rounded-lg mb-8 shadow-md"
+        data-aos="zoom-in"
+        data-aos-delay="100"
       />
 
-      <p className="mb-6 font-medium whitespace-pre-line">{blog.content}</p>
+      <p
+        className="mb-6 font-medium whitespace-pre-line"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        {blog.content}
+      </p>
 
-      <div className="flex justify-between items-center text-sm font-semibold mb-6">
+      <div
+        className="flex justify-between items-center text-sm font-semibold mb-6"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
         <span className="flex items-center gap-1">
           <FaUserAlt />
           <span>Author: {blog.author}</span>
@@ -58,7 +80,11 @@ const BlogDetails = () => {
         </span>
       </div>
 
-      <div className="flex flex-wrap gap-3">
+      <div
+        className="flex flex-wrap gap-3"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
         {blog.tags.map((tag) => (
           <span
             key={tag}
@@ -82,6 +108,8 @@ const BlogDetails = () => {
       <button
         onClick={() => navigate("/blogs")}
         className="mt-10 px-6 py-2 bg-[#AB886D] font-semibold text-white rounded hover:bg-[#8b6d4b] transition"
+        data-aos="fade-up"
+        data-aos-delay="500"
       >
         Back to Blogs
       </button>

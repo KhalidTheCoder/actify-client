@@ -1,14 +1,25 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
 
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+      easing: "ease-out",
+      once: false,
+      offset: 80,
+    });
+  }, []);
+
   const handleSubscribe = (e) => {
     e.preventDefault();
-
     const email = e.target.email.value;
+
     axios
       .post("https://actify-server.vercel.app/newsletter", { email })
       .then((res) => {
@@ -20,7 +31,6 @@ const Newsletter = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-
           setEmail("");
         }
       })
@@ -31,14 +41,31 @@ const Newsletter = () => {
 
   return (
     <section className="bg-[#F5EFE6] py-16 px-6 relative">
-      <div className="max-w-3xl mx-auto bg-white shadow-lg rounded-xl p-10 text-center relative -mt-50 z-10">
-        <p className="text-sm uppercase tracking-wider text-[#AB886D] font-medium mb-2">
+      <div
+        className="max-w-3xl mx-auto bg-white shadow-lg rounded-xl p-10 text-center relative -mt-50 z-10"
+        data-aos="zoom-in"
+      >
+        <p
+          className="text-sm uppercase tracking-wider text-[#AB886D] font-medium mb-2"
+          data-aos="fade-down"
+          data-aos-delay="100"
+        >
           Join Our Community
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold text-[#493628] mb-4">
+
+        <h2
+          className="text-3xl md:text-4xl font-bold text-[#493628] mb-4"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           Subscribe to Our Newsletter
         </h2>
-        <p className="text-[#7a6651] mb-8 text-base leading-relaxed">
+
+        <p
+          className="text-[#7a6651] mb-8 text-base leading-relaxed"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
           Get the latest updates, event announcements, and exclusive content
           delivered straight to your inbox. Be the first to know and stay
           connected with our impactful community efforts.
@@ -56,16 +83,24 @@ const Newsletter = () => {
             placeholder="Your email address"
             required
             className="w-full sm:w-2/3 px-4 py-3 rounded-md border-2 border-[#AB886D] bg-[#FDFBF9] text-[#493628] placeholder-[#AB886D] focus:outline-none focus:ring-2 focus:ring-[#AB886D] transition"
+            data-aos="fade-right"
+            data-aos-delay="400"
           />
           <button
             type="submit"
             className="px-6 py-3 bg-[#AB886D] hover:bg-[#493628] text-white font-semibold rounded-md transition duration-300"
+            data-aos="fade-left"
+            data-aos-delay="500"
           >
             Subscribe
           </button>
         </form>
 
-        <p className="text-xs text-[#a28b74] mt-4">
+        <p
+          className="text-xs text-[#a28b74] mt-4"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
           We respect your privacy. Unsubscribe at any time.
         </p>
       </div>
